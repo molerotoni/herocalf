@@ -3,103 +3,216 @@
   id:          0
   nivel:       2
   rangos:      3
-  name:        "danza de la luna"
+  name:        "Danza de la luna"
   type:        "Activa"
-  coste:       "6 movimiento - 1/rango"
+  coste:       "6 movimiento - 1*rango"
   description: "+1 de ataque hasta final del turno."
 -
   id:          1
   nivel:       2
   rangos:      4
-  name:        "esquiva"
+  name:        "Esquiva"
   type:        "Declarativa"
-  description: "+1/rango defensa frente a un enemigo, hasta tu siguiente turno"
+  description: "+1*rango defensa frente a un enemigo, hasta tu 
+                siguiente turno"
 -
   id:          2
   nivel:       2
   rangos:      3
-  name:        "dos armas"
+  name:        "Dos armas"
   type:        "Pasiva"
-  description: "Permite esgrimir en la mano torpe, un arma de tamaño: 1/rango"
+  description: "Permite esgrimir en la mano torpe, un arma de 
+                tamaño: 1*rango"
 -
   id:          3
   nivel:       2
   rangos:      3
-  name:        "baile de combate"
+  name:        "Postura de combate"
   type:        "Pasiva"
-  description: "Permite atacar desde diferentes ángulos según el rango (diagonal, flancos, y diagonales traseras)"
+  description: "Permite atacar desde diferentes ángulos según el 
+                rango (diagonal en rango 1, flancos en rango 2, y 
+                diagonales traseras en rango 3)"
+# nivel 3
 -
   id:          4
   nivel:       3
-  name:        "agilidad felina"
+  name:        "Agilidad felina"
   type:        "Pasiva"
-  description: "Los enemigos no empujan al derviche en casillas colindantes a paredes"
-# nivel 3
+  description: "Los enemigos no empujan al derviche en casillas 
+                colindantes a paredes"
 -
   id:          5
   nivel:       3
-  name:        "acrobacias"
-  type:        "única"
-  description: "Puedes pasar a través de un enemigo aún sin su consentimiento"
+  name:        "Acrobacias"
+  type:        "Única"
+  description: "Puedes pasar a través de un enemigo aún sin su 
+                consentimiento"
 -
   id:          6
   nivel:       3
-  rangos:      3
-  name:        "paso de combate"
-  description: "Permite dar 1 paso extra"
-  type:        "Activa"
-  coste:       "3 movimiento"
+  rangos:      2
+  name:        "Parada"
+  type:        "Declarativa"
+  coste:       "1 ataque"
+  description: "Permite guardar 1 ataque*rango que puedes usar 
+                para defenderte de un ataque. La tirada funciona
+                como la tirada de ataque pero los éxitos en vez
+                de causar daño restan éxitos del ataque enemigo.
+                La potencia se mantiene."
 -
   id:          7
-  nivel:       4
-  requisitos:  [3]
-  name:        "danza de la muerte"
-  type:        "única"
-  description: "Ataque con tu arma principal a todas las miniaturas de tu alrededor"
+  nivel:       3
+  name:        "Golpe malabar"
+  type:        "Activa"
+  description: "Ataque con tu arma principal que si falla puede 
+                repetirse. Si vuelve a fallar pierdes el arma y
+                debes perder un turno para recuperarla."
 -
   id:          8
+  nivel:       4
+  requisitos:  [3]
+  name:        "Danza de la muerte"
+  type:        "única"
+  description: "Ataque con tu arma principal a todas las miniaturas 
+                de tu alrededor"
+-
+  id:          9
   nivel:       4
   rangos:      2
   requisitos:  [2, 3]
   name:        "Hoja relampagueante"
   type:        "Pasiva"
-  description: "+1 de potencia/rango al atacar a múltiples enemigos en el mismo ángulo."
--
-  id:          9
-  nivel:       5
-  requisitos:  [0,2]
-  name:        "Crepúsculo"
-  type:        "única"
-  description: "Puedes renunciar a un ataque con un arma para sumar sus dados de ataque a la fuerza de tu siguiente ataque este turno."
+  description: "+1 de potencia/rango al atacar a múltiples 
+                enemigos que estén en las casillas diagonales 
+                o adyacentes"
 -
   id:          10
   nivel:       5
   requisitos:  [0,2]
-  name:        "Amanecer"
+  name:        "Crepúsculo"
   type:        "única"
-  description: "Puedes renunciar a un ataque con un arma para sumar su potencia y fuerza a tu siguiente ataque este turno."
+  description: "Puedes renunciar a un ataque con un arma para 
+                sumar sus dados de ataque a la fuerza de tu 
+                siguiente ataque este turno."
 -
   id:          11
+  nivel:       5
+  requisitos:  [0,2]
+  name:        "Amanecer"
+  type:        "única"
+  description: "Puedes renunciar a un ataque con un arma para 
+                sumar su potencia y fuerza a tu siguiente 
+                ataque este turno."
+-
+  id:          12
+  nivel:       5
+  requisitos:  [6]
+  name:        "Réplica"
+  type:        "Única"
+  description: "Tras realizar una Parada con éxito puedes 
+                realizar un ataque contra tu atacante. La
+                recuperas al entrar en reposo."
+-
+  id:          13
   nivel:       6
-  requisitos:  [7, 8]
+  requisitos:  [8, 9]
   name:        "Danza relampagueante"
   type:        "reactiva"
   description: "Recuperas danza de la muerte al matar
                 usando hoja relampagueante."
 -
-  id:          12
+  id:          14
   nivel:       6
   name:        "Golpe de muñeca"
   type:        "Activa"
   coste:       "-1 potencia hasta final de turno"
   description: "+1 fuerza en tu siguiente ataque"
 -
-  id:          13
+  id:          15
   nivel:       7
-  name:        "Filo súbito"
+  rangos:      3
+  name:        "Lanzamiento Malabar"
   type:        "Activa"
-  coste:       ""
-  description: "Durante la fase trepidante"
+  description: "Puedes lanzar espadas de tamaño 2. Al lanzar un arma
+                tira un dado*rango, con 1 escudo o más el arma rebota
+                hacia ti y la recuperas."
+-
+  id:          16
+  nivel:       7
+  requisitos:   [6, 12]
+  name:        "Réplica mejorada"
+  type:        "Pasiva"
+  description: "Matar a un enemigo con Réplica la recupera."
+-
+  id:          17
+  nivel:       7
+  requisitos:   [10, 11]
+  name:        "Festival sangriento"
+  type:        "Pasiva"
+  description: "Matar a un enemigo con Amanecer recupera Crepúsculo y viceversa."
+  
+-
+  id:          18
+  nivel:       7
+  requisitos:   []
+  name:        "Golpe crítico"
+  type:        "Única"
+  description: "Puedes gastar 1*rangos PM para aumentar la potencia o 
+  fuerza del siguiente ataque."
+-
+  id:          19
+  nivel:       8
+  rangos:      3
+  requisitos:   [6]
+  name:        "Desarmar"
+  type:        "Única"
+  description: "Tras realizar una parada con al menos 4-rangos éxitos
+                sobrantes puedes desarmar al atacante. Esta habilidad
+                no permite el uso de réplica a la vez."
+-
+  id:          20
+  nivel:       8
+  rangos:      2
+  requisitos:   [8]
+  name:        "Danza de cuchillas"
+  type:        "Activa"
+  coste:       "4 movimiento - rangos"
+  description: "Puedes realizar un paso tras cada ataque."
+  
+-
+  id:          21
+  nivel:       8
+  rangos:      2
+  requisitos:   [7,15]
+  name:        "Malabares desconcertantes"
+  type:        "Pasiva"
+  description: "Tienes +1*rangos de defensa contra objetivos que hayan
+                sufrido daño de Golpe malabar o Lanzamiento malabar."                  
+-
+  id:          22
+  nivel:       9
+  requisitos:   [5]
+  name:        "Maestro de acrobacias"
+  type:        "Pasiva"
+  description: "Recuperas Acrobacia al entrar en reposo"                  
+-
+  id:          23
+  nivel:       9
+  rangos:      2
+  requisitos:   [2]
+  name:        "Maestro de esquiva"
+  type:        "Declarada"
+  coste:       "3 - rangos PM"
+  description: "Puedes declarar un objetivo adicional para Esquiva"
+-
+  id:          24
+  nivel:       9
+  requisitos:   [2]
+  name:        "Reflejos relámpago"
+  type:        "Pasiva"
+  description: "Reduce en 1 el coste de movimiento de las casillas afectadas 
+                por empujones enemigos hasta un mínimo de 1."
+  
 # nivel 10 - Habilidades definitivas
 -
   id:           25
@@ -107,11 +220,11 @@
   requisitos:   [2]
   name:         "Flor de lis"
   type:         "Definitiva"
-  description:  "3 Armas"
+  description:  "Puedes usar 3 armas haciendo malabares con ellas, las armas deben ser de tamaño 1 o 2"
 -
   id:           26
   nivel:        10
-  requisitos:   [7]
+  requisitos:   [8]
   name:         "El tango de la muerte"
   type:         "Definitiva"
   description:  "Elige un compañero voluntario. Ambos bailáis el tango.
@@ -122,8 +235,12 @@
 -
   id:           27
   nivel:        10
-  name:         "Fiebre de la noche"
+  requisitos:   [6, 12]
+  name:         "Maestro de duelo"
   type:         "Definitiva"
-  description:  "Al inicio del turno siguiente de ejecutar danza de la luna,
-                 podrás atacar (daño mental) a todas las miniaturas adyacentes
-                 con tu arma principal. +1 potencia si es sábado"
+  description:  "Puedes renunciar a tu movimiento y ataques para usar 
+                 parada y réplica contra todos los ataques que recibas. 
+                 Por cada PM que gastes tienes +1 a cada parada y réplica.
+                 Al usar esta habilidad no puedes usar ninguna otra habilidad
+                 excepto pasivas, parada y réplica."
+  
